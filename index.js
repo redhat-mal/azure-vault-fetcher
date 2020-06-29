@@ -51,6 +51,7 @@ async function fetchVaultValues() {
 
   let vaultUrl="https://" + process.env.AZ_VAULT_NAME + ".vault.azure.net/"
   let secretsPath = process.env.AZ_SECRET_PATH;
+	console.log("CID:" + clientId);
 
   let credentials = await msRestAzure.loginWithServicePrincipalSecret(clientId, clientSecret, tenantId);
   let kvClient = new keyVault.KeyVaultClient(credentials);
