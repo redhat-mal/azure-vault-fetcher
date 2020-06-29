@@ -1,0 +1,20 @@
+{
+    "name": "ms-vault-fetcher",
+    "contributors": "malacourse",
+    "description": "Fetch secrets and certificates from Azure key vault",
+    "version": "0.0.1",
+    "private": true,
+    "license": "MIT",
+    "author": "Redhat",
+    "engines": {
+        "node": ">=6.9.1"
+    },
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "azure-keyvault": "^3.0.4",
+        "ms-rest-azure": "^2.5.7",
+        "read-azure-secrets": "^1.0.1"
+    }
+}
