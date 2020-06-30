@@ -1,5 +1,5 @@
 
-echo "Creaating service principal for $1"
+echo "Creaating service principal for $1 and vault $2"
 
 role_data=$(az ad sp create-for-rbac --role Contributor --name $1)
 
@@ -23,8 +23,8 @@ AZ_APP_SECRET=$secret_id
 AZ_TENANT=$tenant_id
 EOF
 
-az keyvault set-policy -n att-test-vault --spn $app_id --secret-permissions get list  
-az keyvault set-policy -n att-test-vault --spn $app_id --certificate-permissions get list
+az keyvault set-policy -n $2 --spn $app_id --secret-permissions get list  
+az keyvault set-policy -n $2 --spn $app_id --certificate-permissions get list
 
 oc create secret generic azure-vault-config --from-env-file=/tmp/$app_id.properties
 
